@@ -32,7 +32,7 @@ function(req, res) {
   # Create folder for solution files
   dir.create("hiking_output")
   
-  dog_maximizer_post_processor()
+  hiking_path_post_processor()
   
   # copy files to the solution directory
   solution_files <- c("hiking_path_for_the_trail.csv",
