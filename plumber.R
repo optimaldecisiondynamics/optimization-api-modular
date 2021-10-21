@@ -26,7 +26,7 @@ function(req, res) {
   file.remove(fp)
   
   # Run the optimization model!
-  system(command = "python3 hiking_model_runner_with_lookup.py",
+  system(command = "python3 hiking_model_runner.py",
          wait = TRUE)
   
   # Create folder for solution files
