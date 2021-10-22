@@ -7,6 +7,8 @@ import pandas as pd
 
 from pathlib import Path
 
+import multiprocessing
+
 import argparse
 
 import script_executor_function as sef
