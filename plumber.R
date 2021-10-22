@@ -26,8 +26,13 @@ function(req, res, model_type = "shortest_path") {
   # Delete the zip file
   file.remove(fp)
   
+  # Run the optimization model using the model type specified 
+  # This is achieved using a command line argument to Python
+  hiking_model_command <- paste0("python3 hiking_model_runner.py",
+                                 " --model ", model_type)
+  
   # Run the optimization model!
-  system(command = "python3 hiking_model_runner.py",
+  system(command = hiking_model_command,
          wait = TRUE)
   
   # Create folder for solution files
