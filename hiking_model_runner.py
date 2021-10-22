@@ -7,8 +7,6 @@ import pandas as pd
 
 from pathlib import Path
 
-import multiprocessing
-
 import argparse
 
 import script_executor_function as sef
@@ -23,9 +21,6 @@ args = parser.parse_args()
 
 model_name = args.model
 print(model_name)
-
-# Detect number of threads for the CBC solver to use
-threads = multiprocessing.cpu_count()
 
 #################### CREATE DICTIONARY FOR EACH MODEL COMPONENT ######################
 
