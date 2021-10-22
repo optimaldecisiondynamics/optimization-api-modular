@@ -24,6 +24,9 @@ args = parser.parse_args()
 model_name = args.model
 print(model_name)
 
+# Detect number of threads for the CBC solver to use
+threads = multiprocessing.cpu_count()
+
 #################### CREATE DICTIONARY FOR EACH MODEL COMPONENT ######################
 
 # Core model files are part of ALL model formulations
