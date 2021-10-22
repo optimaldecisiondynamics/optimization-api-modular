@@ -1,6 +1,6 @@
 ######################### SOLVE ############################################
 
-solver = SolverFactory('cbc', executable = 'C:\\Program Files\\cbc\\bin\\cbc.exe')
+solver = SolverFactory('cbc')
 
 # Set solver options, such as the number of threads to use and timeout
 solver.options['threads'] = 2
