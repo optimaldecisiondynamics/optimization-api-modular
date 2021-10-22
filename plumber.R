@@ -10,9 +10,10 @@ source("./hiking_path_analysis.R")
 #* @apiDescription Use this API to find the best hike for you, depending on your preferences.  Do you prefer to go from origin to destination via the shortest path?  The least steep path?
 
 #* Tell about what the API does
+#* @param model_type the type of hiking model to solve (two options: "shortest_path" or "min_max_elevation_change")
 #* @serializer contentType list(type="application/octet-stream")
 #* @post /mathematical_hiking
-function(req, res) {
+function(req, res, model_type = "shortest_path") {
   
   # Upload zip file of data for the optimization model
   multipart <- mime::parse_multipart(req)
