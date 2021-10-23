@@ -53,6 +53,12 @@ function(req, res, model_type = "shortest_path") {
   zip::zip(zipfile = zfile,
            files = paste0("hiking_output/", solution_files))
   
+  # Delete folder of output data, as it is no longer needed after the zip file is created
+  unlink("hiking_output", recursive = TRUE)
+  
+  # Also delete solution files
+  file.remove(solution_files)
+  
   readBin(zfile, "raw", n = file.info(zfile)$size)
   
 }
