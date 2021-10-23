@@ -11,12 +11,12 @@ hiking_test <- POST("http://127.0.0.1:8080/mathematical_hiking",
 # E.g., https://your_api_url/mathematical_hiking
 
 # 2 API requests, one for each model type
-hiking_test <- POST("https://your_api_url/mathematical_hiking/mathematical_hiking",
+hiking_test <- POST("https://your_api_url/mathematical_hiking",
                     body = list(param = upload_file("hiking_inputs.zip")),
                     query = list(model_type = "min_max_elevation_change"),
                     write_disk("hiking_output.zip", overwrite = TRUE))
 
-hiking_test2 <- POST("https://your_api_url/mathematical_hiking/mathematical_hiking",
+hiking_test2 <- POST("https://your_api_url/mathematical_hiking",
                     body = list(param = upload_file("hiking_inputs.zip")),
                     query = list(model_type = "shortest_path"),
                     write_disk("hiking_output.zip", overwrite = TRUE))
